@@ -42,16 +42,7 @@
 
             </form>
 
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col-md">
-                        <a class="btn btn-outline-dark w-100 star-bg" href="{{ route('auth.google') }}">
-                            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="{{ asset('assets/img/icons/google-96.png') }}" />
-                            Signin with Google
-                        </a>
-                    </div>
-                </div>
-            </div>
+            {{-- Hapus tombol Google login berikut --}}
 
         </div>
 

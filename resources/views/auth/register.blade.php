@@ -64,17 +64,6 @@
                 <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
             </form>
 
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col-md">
-                        <a class="btn btn-outline-dark w-100 strom-bg" href="{{ route('auth.google') }}">
-                            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="{{ asset('assets/img/icons/google-96.png') }}" />
-                            Signup with Google
-                        </a>
-                    </div>
-                </div>
-            </div>
-
             <p class="text-center">
                 <span>Already have an account?</span>
                 <a href="{{ route('login') }}">

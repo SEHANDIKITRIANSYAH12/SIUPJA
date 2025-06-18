@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
 
@@ -19,6 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'username',
         'name',
         'password',
+        'avatar',
     ];
 
     protected $dates = ['deleted_at'];
@@ -32,4 +33,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function getAvatarUrlAttribute()
+    {
+        return $this->avatar ? asset('storage/' . $this->avatar) : asset('assets/img/avatars/1.png');
+    }
 }

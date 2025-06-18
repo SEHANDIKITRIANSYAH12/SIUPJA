@@ -53,12 +53,8 @@ class RegisteredUserController extends Controller
 
             $user->assignRole('Member');
 
-            event(new Registered($user));
-
             DB::commit();
-
             Auth::login($user);
-
             return redirect(RouteServiceProvider::HOME);
         } catch (Exception $e) {
             DB::rollBack();
